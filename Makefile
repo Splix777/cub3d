@@ -50,7 +50,7 @@ PRINTF_DIR = ft_printf
 LIBFT = $(LIBFT_DIR)/libft.a
 PRINTF = $(PRINTF_DIR)/libftprintf.a
 
-MLX_DIR = minilibx-linux
+MLX_DIR = mlx_setup
 MLX = $(MLX_DIR)/libmlx.a
 MLXFLAGS = -L$(MLX_DIR) -lmlx -lm -lXext -lX11
 
