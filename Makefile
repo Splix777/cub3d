@@ -50,9 +50,9 @@ PRINTF_DIR = ft_printf
 LIBFT = $(LIBFT_DIR)/libft.a
 PRINTF = $(PRINTF_DIR)/libftprintf.a
 
-MLX_DIR = mlx_setup
+MLX_DIR = mlx
 MLX = $(MLX_DIR)/libmlx.a
-MLXFLAGS = -L$(MLX_DIR) -lmlx -lm -lXext -lX11
+MLXFLAGS = -Lmlx -lmlx -framework OpenGL -framework AppKit
 
 all: $(NAME)
 

@@ -36,12 +36,12 @@ void    free_structs(t_game *game)
         free_void_array((void **)game->texture_pixels);
     if (game->f_map)
         free_char_array(game->f_map);
-    if (&game->map != NULL)
-        free_map_struct(&game->map);
-    if (&game->texture != NULL)
-        free_texture_struct(&game->texture);
-    if (&game->img != NULL)
-        free_img_struct(&game->img);
+    // if (&game->map != NULL)
+    //     free_map_struct(&game->map);
+    // if (&game->texture != NULL)
+    //     free_texture_struct(&game->texture);
+    // if (&game->img != NULL)
+    //     free_img_struct(&game->img);
 }
 
 void    free_exit(t_game *game, int exit_code)
@@ -52,8 +52,8 @@ void    free_exit(t_game *game, int exit_code)
         mlx_destroy_window(game->mlx, game->win);
     if (game->mlx)
     {
-        mlx_destroy_display(game->mlx);
-        mlx_loop_end(game->mlx);
+        // mlx_destroy_display(game->mlx);
+        // mlx_loop_end(game->mlx);
         free(game->mlx);
     }
     free_structs(game);

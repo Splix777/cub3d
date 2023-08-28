@@ -2,45 +2,53 @@
 
 int	key_press_handler(int key, t_game *game)
 {
-	if (key == XK_Escape)
+	if (key == MAC_KEY_ESCAPE)
 		free_exit(game, 0);
-	if (key == XK_Left)
+	if (key == MAC_KEY_LEFT)
 		game->player.rotate -= 1;
-	if (key == XK_Right)
+	if (key == MAC_KEY_RIGHT)
 		game->player.rotate += 1;
-	if (key == XK_w)
+	if (key == MAC_KEY_W)
 		game->player.move_y = 1;
-	if (key == XK_a)
+	if (key == MAC_KEY_A)
 		game->player.move_x = -1;
-	if (key == XK_s)
+	if (key == MAC_KEY_S)
 		game->player.move_y = -1;
-	if (key == XK_d)
+	if (key == MAC_KEY_D)
 		game->player.move_x = 1;
 	return (0);
 }
 
 int	key_release_handler(int key, t_game *game)
 {
-	if (key == XK_Escape)
+	if (key == MAC_KEY_ESCAPE)
 		free_exit(game, 0);
-	if (key == XK_w && game->player.move_y == 1)
+	if (key == MAC_KEY_W && game->player.move_y == 1)
 		game->player.move_y = 0;
-	if (key == XK_s && game->player.move_y == -1)
+	if (key == MAC_KEY_S && game->player.move_y == -1)
 		game->player.move_y = 0;
-	if (key == XK_a && game->player.move_x == -1)
+	if (key == MAC_KEY_A && game->player.move_x == -1)
 		game->player.move_x += 1;
-	if (key == XK_d && game->player.move_x == 1)
+	if (key == MAC_KEY_D && game->player.move_x == 1)
 		game->player.move_x -= 1;
-	if (key == XK_Left && game->player.rotate <= 1)
+	if (key == MAC_KEY_LEFT && game->player.rotate <= 1)
 		game->player.rotate = 0;
-	if (key == XK_Right && game->player.rotate >= -1)
+	if (key == MAC_KEY_RIGHT && game->player.rotate >= -1)
 		game->player.rotate = 0;
 	return (0);
 }
 
 void	key_input(t_game *game)
 {
-	mlx_hook(game->win, ClientMessage, NoEventMask, end_game, game);
-	mlx_hook(game->win, KeyPress, KeyPressMask, key_press_handler, game);
-	mlx_hook(game->win, KeyRelease, KeyReleaseMask, key_release_handler, game);
+	mlx_hook(game->win, 17, 1L << 17, end_game, game);
+	mlx_hook(game->win, 02, (1L<<0), key_press_handler, game);
+	mlx_hook(game->win, 03, (1L<<1), key_release_handler, game);
 }
+
+// void	key_input(t_game *game)
+// {
+// 	mlx_hook(game->win, mlx_key_hook, MAC_KEY_ESCAPE, end_game, game);
+// 	// mlx_hook(game->win, 17, 1L << 17, end_game, game);
+// 	mlx_key_hook(game->win, key_press_handler, game);
+// 	mlx_hook(game->win, 03, (1L<<1), key_release_handler, game);
+// }

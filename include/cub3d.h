@@ -1,9 +1,10 @@
 #ifndef CUBED_H
 # define CUBED_H
 // Libraries
-# include "../minilibx-linux/mlx.h"
+# include "../mlx/lib/mlx_mac/mlx.h"
 # include "../libft/libft.h"
 # include "../ft_printf/ft_printf.h"
+# include "Mac_Keys.h"
 # include <math.h>
 # include <unistd.h>
 # include <stdlib.h>
@@ -11,8 +12,6 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include <stdbool.h>
-# include <X11/keysym.h>
-# include <X11/X.h>
 // Window Size (640 x 480)
 # define WIN_WIDTH 640
 # define WIN_HEIGHT 480
