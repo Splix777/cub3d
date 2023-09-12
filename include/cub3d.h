@@ -13,8 +13,8 @@
 # include <stdio.h>
 # include <stdbool.h>
 // Window Size (640 x 480)
-# define WIN_WIDTH 640
-# define WIN_HEIGHT 480
+# define WIN_WIDTH 1920
+# define WIN_HEIGHT 1080
 // Texture Size (64 x 64)
 # define TEX_SIZE 64 // Size of textures in pixels (64 x 64)
 // BOOL

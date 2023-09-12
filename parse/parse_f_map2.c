@@ -6,6 +6,8 @@ int  check_map_chars(t_game *game)
     int j;
 
     i = 0;
+    printf("esto %s: \n", game->f_map[0]);
+    printf("esto %s: \n", game->map.map[9]);
     if (game->f_map == NULL)
         return (FALSE);
     while (game->f_map[i])
