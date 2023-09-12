@@ -119,6 +119,7 @@ typedef struct s_player
 	double dir_y;         // Player's direction vector along the Y-axis
 	double plane_x;       // Player's camera plane vector along the X-axis
 	double plane_y;       // Player's camera plane vector along the Y-axis
+	double	speed;
 	int has_moved;        // Flag indicating if the player has moved
 	int move_x;           // Player's movement along the X-axis
 	int move_y;           // Player's movement along the Y-axis
@@ -206,6 +207,7 @@ int  	check_offsets(t_game *game);
 int  	check_map_walls(t_game *game);
 // parse/parse_f_map.c
 int 	validate_final_map(t_game *game);
+void	find_finalmap_dimensions(t_game *game);
 int 	check_validate_map(t_game *game);
 // parse/parse_f_map2.c
 int  	check_map_chars(t_game *game);

@@ -16,6 +16,8 @@ int	key_press_handler(int key, t_game *game)
 		game->player.move_y = -1;
 	if (key == MAC_KEY_D)
 		game->player.move_x = 1;
+	if (key == MAC_KEY_SHIFT_LEFT)
+		game->player.speed = 0.7;
 	return (0);
 }
 
@@ -35,6 +37,8 @@ int	key_release_handler(int key, t_game *game)
 		game->player.rotate = 0;
 	if (key == MAC_KEY_RIGHT && game->player.rotate >= -1)
 		game->player.rotate = 0;
+	if (key == MAC_KEY_SHIFT_LEFT)
+		game->player.speed = SPEED;
 	return (0);
 }
 
